@@ -162,7 +162,7 @@ class Home extends React.Component {
           </div>
 
           <div className="articlesContainer">
-            <NewsList newsArticles={this.state.articles} />
+            <NewsList newsArticles={this.state.articles} fav="false" />
           </div>
         </div>
       </div>
