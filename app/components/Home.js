@@ -1,6 +1,7 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import Topics from './Topics';
 import AddSource from './AddSource';
@@ -175,4 +176,8 @@ Home.propTypes = {
   getPreferences: PropsTypes.func.isRequired,
 };
 
-export default Home;
+function mapStateToProps({ user }) {
+  return { user };
+}
+
+export default connect(mapStateToProps)(Home);
