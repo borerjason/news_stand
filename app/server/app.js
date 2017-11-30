@@ -13,6 +13,7 @@ import getSources from './middleware/getSources';
 import getPreferences from './middleware/getPreferences';
 import setPreferences from './middleware/setPreferences';
 import addFavorite from './middleware/addFavorite';
+import getUser from './middleware/getUser';
 
 
 const app = express();
@@ -63,6 +64,11 @@ app.post('/favorites', addFavorite, (request, response) => {
   } else {
     response.status(200).end('please log in before adding to favorites');
   }
+});
+
+app.get('/user', getUser, (request, response) => {
+  console.log('result in app.js', request.result);
+  response.json(request.result);
 });
 
 // catch-all route for implementing React Router
